@@ -1,26 +1,15 @@
 import turtle as trtl
 import random as rand
 
+# pumpkin
 p = trtl.Turtle()
-
-'''
-pumpkin_color = "orange"
-pumpkin_shape = "circle"
-pumpkin_size = 2
-score = 0
-
-p.fillcolor(pumpkin_color)
-p.shape(pumpkin_shape)
-p.shapesize(pumpkin_size)
-p.color("orange")
-'''
 
 def pumpkin_clicked(x,y):
   pumpkin_change_position()
 
 def pumpkin_change_position():
-  x_value = rand.randint(-100,100)
-  y_value = rand.randint(-100,100)
+  x_value = rand.randint(-200,200)
+  y_value = rand.randint(-200,200)
   p.penup()
   p.hideturtle()
   p.goto(x_value,y_value)
@@ -34,6 +23,7 @@ p.shape('pumpkin.gif')
 p.onclick(pumpkin_clicked)
 
 
+# ghost
 g = trtl.Turtle()
 
 def ghost_clicked(x,y):
@@ -43,13 +33,12 @@ def ghost_change_position(x_value,y_value):
   g.penup()
   g.goto(x_value,y_value)
 
-
 wn = trtl.Screen()
 
 wn.addshape('ghost_1.gif')
 g.shape('ghost_1.gif')
 wn.onclick(ghost_clicked)
 
-
+wn. bgcolor("black")
 
 wn.mainloop()
